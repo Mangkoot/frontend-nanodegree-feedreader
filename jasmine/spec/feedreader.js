@@ -61,7 +61,7 @@ $(function() {
          */
          //Got on track here:https://github.com/velesin/jasmine-jquery/pull/238/files
          it('menu element is hidden', function() {
-            expect($('body').hasClass('menu-hidden')).toBe(true);
+                expect($('body').hasClass('menu-hidden')).toBe(true);
          });
    
          /* TODO: Write a test that ensures the menu changes
@@ -69,16 +69,34 @@ $(function() {
           * should have two expectations: does the menu display when
           * clicked and does it hide when clicked again.
           */
+          it('menu element changes visibility when clicked', function() {
+                //Click to open the menu
+                $('.menu-icon-link').click();
+                expect($('body').hasClass('menu-hidden')).toEqual(false);
+                //Click to hide the menu
+                $('.menu-icon-link').click();
+                expect($('body').hasClass('menu-hidden')).toEqual(true);
+          });
      });
     /* TODO: Write a new test suite named "Initial Entries" */
-
+    describe('Initial Entries', function() {
         /* TODO: Write a test that ensures when the loadFeed
          * function is called and completes its work, there is at least
          * a single .entry element within the .feed container.
          * Remember, loadFeed() is asynchronous so this test will require
          * the use of Jasmine's beforeEach and asynchronous done() function.
          */
+         beforeEach(function(done) {
+          loadFeed(0, function() {
+            done();
+          });
+        });
 
+         it('check if feed has at least one entry', function() {
+            var entryNumber = $('.entry');
+            expect(entryNumber.length).not.toBe(0);
+         });
+    });
     /* TODO: Write a new test suite named "New Feed Selection" */
 
         /* TODO: Write a test that ensures when a new feed is loaded
