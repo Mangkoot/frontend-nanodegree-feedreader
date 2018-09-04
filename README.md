@@ -1,7 +1,7 @@
 # Project Overview
 
-This is part of the *Front End NanoDegree* program with Udacity.
-The purpose of this project was to make tests that proves the code is correct, using Jasmine to validate.
+This is part of the *Front End NanoDegree* program at Udacity.com.
+The purpose of this project was to make tests that prove the code is correct, using Jasmine to validate.
 
 ## How to
 
