@@ -11,4 +11,4 @@ The actual code for the tests you will find in the jasmine/spec/feedreader.js fi
 
 ## Framework
 
-Jasmine 2.1.2 (JavaScrip testing framework)
+Jasmine 2.1.2 (JavaScript testing framework)
